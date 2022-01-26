@@ -27,6 +27,7 @@
   font-weight: 600;
 }
 .header-hamburger {
+  /* 모바일이 아닐때는 display:none 으로 햄버거 바가 안보이게함 */
   display: none;
   color: var(--white);
 }
@@ -37,12 +38,13 @@
 .selected-header-option {
   color: #ff5823;
 }
-
+/* 아이패드 사이즈 */
 @media only screen and (max-width: 1110px) {
   .header-parent {
     width: 80%;
   }
 }
+
 @media only screen and (max-width: 970px) {
   .header-hamburger {
     display: block;
@@ -61,7 +63,7 @@
     height: 100vh;
     width: 100%;
     justify-content: space-around;
-    background-color: #1f2236;
+    background-color: #1f2235;
     z-index: 1000;
     opacity: 0.8;
     transition: all 0.8s ease-out;
