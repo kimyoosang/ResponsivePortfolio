@@ -55,7 +55,8 @@ function Profile() {
                 />
               </h1>
               <span className="profile-role-tagline">
-                안녕하세요 가치를 만드는 개발자 김유상 입니다
+                새롱 것을 창조하는 개발자라는 직업의 매력을 느껴 열심히 공부하고
+                있는 신입 개발자 김유상입니다
               </span>
             </span>
           </div>

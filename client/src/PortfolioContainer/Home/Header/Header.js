@@ -7,7 +7,6 @@ import ScrollService from "../../../utilities/ScrollService";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Header.css";
-import { isArrayBuffer } from "jsdom/lib/jsdom/living/generated/utils";
 
 function Header() {
   const [selectedScreen, setSelectedScreen] = useState(0);
@@ -60,10 +59,10 @@ function Header() {
     >
       <div className="header-parent">
         <div
-          className="header-habmurget"
+          className="header-hamburger"
           onClick={() => setShowHeaderOptions(!showHeaderOptions)}
         >
-          <FontAwesomeIcon className="header-hamburget-bars" icon={faBars} />
+          <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
         </div>
         <div className="header-logo">
           <span>김유상</span>
