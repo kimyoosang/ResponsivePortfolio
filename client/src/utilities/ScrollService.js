@@ -1,4 +1,3 @@
-import React from "react";
 import { TOTAL_SCREENS } from "./commonUtils";
 import { Subject } from "rxjs";
 
@@ -18,7 +17,6 @@ export default class ScrollService {
 
     contactMeScreen.scrollIntoView({ behavior: "smooth" });
   };
-
   scrollToHome = () => {
     let homeScreen = document.getElementById("Home");
     if (!homeScreen) return;
@@ -51,23 +49,25 @@ export default class ScrollService {
     if (!event || Object.keys(event).length < 1) return;
 
     for (let screen of TOTAL_SCREENS) {
-      let screenFromDom = document.getElementById(screen.screen_name);
-      if (!screenFromDom) continue;
+      let screenFromDOM = document.getElementById(screen.screen_name);
+      if (!screenFromDOM) continue;
 
-      let fullyVisible = this.isElementInView(screenFromDom, "complete");
-      let partiallyVisible = this.isElementInView(screenFromDom, "partial");
+      let fullyVisible = this.isElementInView(screenFromDOM, "complete");
+      let partiallyVisible = this.isElementInView(screenFromDOM, "partial");
 
       if (fullyVisible || partiallyVisible) {
         if (partiallyVisible && !screen.alreadyRendered) {
+          //BROADCAST FADE IN EFFECT
           ScrollService.currentScreenFadeIn.next({
             fadeInScreen: screen.screen_name,
           });
-          screen["alreadtRendered"] = true;
+          screen["alreadyRendered"] = true;
           break;
         }
 
         if (fullyVisible) {
-          MediaElementAudioSourceNode.currentScreenBroadcaster.next({
+          // BROADCAST SCREEN NAME
+          ScrollService.currentScreenBroadcaster.next({
             screenInView: screen.screen_name,
           });
           break;

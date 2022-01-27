@@ -11,13 +11,12 @@ import interests from "../../assets/Resume/interests.svg";
 
 function Resume(props) {
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
-  const [carousalOffSetStyle, setCarousalOffsetStyle] = useState({});
+  const [carousalOffSetStyle, setCarousalOffSetStyle] = useState({});
 
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
   };
-
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
@@ -50,10 +49,10 @@ function Resume(props) {
     { label: "Work History", logoSrc: work_history },
     { label: "Programming Skills", logoSrc: programming_skills },
     { label: "Projects", logoSrc: projects },
-    { label: "interests", logoSrc: interests },
+    { label: "Interests", logoSrc: interests },
   ];
 
-  const programmingSkillsDatails = [
+  const programmingSkillsDetails = [
     { skill: "Javascript", ratingPercentage: 90 },
     { skill: "Typescript", ratingPercentage: 85 },
     { skill: "React", ratingPercentage: 95 },
@@ -84,8 +83,8 @@ function Resume(props) {
     },
   ];
 
-  const resumeDetials = [
-    <div className="resume-screen-container" key={education}>
+  const resumeDetails = [
+    <div className="resume-screen-container" key="education">
       <ResumeHeading
         heading={"코드스테이츠 부트캠프"}
         subHeading={"Full Stack Software Engineering"}
@@ -107,16 +106,11 @@ function Resume(props) {
         foDate={"2021-12"}
       />
       <div className="experience-description">
-        <span className="resume-description-text">
+        <span className="experience-description-text">
           개인과 인플루언서를 기반으로 한 이커머스 서비스
         </span>
       </div>
       <div className="experience-description">
-        <span className="resume-description-text">
-          React | Javascript | Typescript | Redux | React hooks | Axios | JWT |
-          Oauth | REST API | HTML | CSS | Styled-component
-        </span>
-        <br />
         <span className="resume-description-text">
           - Oauth를 활용한 Kakao, Facebook, Google 소셜로그인 구현
         </span>
@@ -164,46 +158,44 @@ function Resume(props) {
       className="resume-screen-container programming-skills-container"
       key="programming-skills"
     >
-      {programmingSkillsDatails.map((skill, index) => (
+      {programmingSkillsDetails.map((skill, index) => (
         <div className="skill-parent" key={index}>
           <div className="heading-bullet"></div>
           <span>{skill.skill}</span>
           <div className="skill-percentage">
             <div
-              className="active-percentage-bar"
               style={{ width: skill.ratingPercentage + "%" }}
+              className="active-percentage-bar"
             ></div>
           </div>
         </div>
       ))}
     </div>,
     <div className="resume-screen-container" key="projects">
-      {projectDetails.map((projectDetail, index) => (
+      {projectDetails.map((projectDetails, index) => (
         <ResumeHeading
           key={index}
-          heading={projectDetail.title}
-          subHeading={projectDetail.subHeading}
-          description={projectDetail.description}
-          fromDate={projectDetail.fromDate}
-          toDate={projectDetail.toDate}
+          heading={projectDetails.title}
+          subHeading={projectDetails.subHeading}
+          description={projectDetails.description}
+          fromDate={projectDetails.duration.fromDate}
+          toDate={projectDetails.duration.toDate}
         />
       ))}
     </div>,
     <div className="resume-screen-container" key="interests">
       <ResumeHeading heading="Reading" description="책 읽는 것을 좋아합니다" />
       <ResumeHeading heading="Music" description="음악 듣는 것을 좋아합니다" />
-      <ResumeHeading heading="Coffe" description="커피를 사랑합니다" />
+      <ResumeHeading heading="Animal" description="동물을 좋아합니다" />
     </div>,
   ];
 
   const handleCarousal = (index) => {
     let offsetHeight = 360;
-
     let newCarousalOffset = {
       style: { transform: "translateY(" + index * offsetHeight * -1 + "px)" },
     };
-
-    setCarousalOffsetStyle(newCarousalOffset);
+    setCarousalOffSetStyle(newCarousalOffset);
     setSelectedBulletIndex(index);
   };
 
@@ -216,19 +208,23 @@ function Resume(props) {
         }
         key={index}
       >
-        <img className="bullet-logo" src={bullet.logoSrc} alt="B" />
+        <img
+          className="bullet-logo"
+          src={bullet.logoSrc}
+          // alt="oops,,, no inteset connection"
+        />
         <span className="bullet-label">{bullet.label}</span>
       </div>
     ));
   };
 
-  const getResumeScreens = () => {
+  const getResumeScreen = () => {
     return (
       <div
-        className="resume-details-carousal"
         style={carousalOffSetStyle.style}
+        className="resume-details-carousal"
       >
-        {resumeDetials.map((ResumeDetail) => ResumeDetail)}
+        {resumeDetails.map((ResumeDetail) => ResumeDetail)}
       </div>
     );
   };
@@ -239,7 +235,7 @@ function Resume(props) {
       id={props.id || ""}
     >
       <div className="resume-content">
-        <ScreenHeading title={"Resume"} subHeading={"My formal Bio Details"} />
+        <ScreenHeading title={"Resume"} subHeading={"My Formal Bio Details"} />
         <div className="resume-card">
           <div className="resume-bullets">
             <div className="bullet-container">
@@ -247,8 +243,7 @@ function Resume(props) {
               <div className="bullets">{getBullets()}</div>
             </div>
           </div>
-
-          <div className="resume-bullet-details">{getResumeScreens()}</div>
+          <div className="resume-bullet-details">{getResumeScreen()}</div>
         </div>
       </div>
     </div>
