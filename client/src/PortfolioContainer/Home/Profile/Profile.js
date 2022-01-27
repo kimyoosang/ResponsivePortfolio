@@ -10,7 +10,7 @@ function Profile() {
         <div className="profile-details">
           <div className="colz">
             <div className="colz-icon">
-              <a href="#">
+              <a href="https://www.naver.com">
                 <i className="fa fa-facebook-square"></i>
               </a>
               <a href="#">
