@@ -24,7 +24,7 @@
   margin: 10px 0 0 0;
 }
 .seperator-line {
-  width: 10px;
+  width: 100%;
   height: 2px;
   background-color: #1f2235;
 }

@@ -10,7 +10,7 @@ function AboutMe(props) {
     Animations.animations.fadeInScreen(props.id);
   };
 
-  const fedeInSubscription =
+  const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
   const SCREEN_CONSTSANTS = {
     description:
