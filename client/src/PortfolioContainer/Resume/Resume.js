@@ -64,20 +64,27 @@ function Resume(props) {
 
   const projectDetails = [
     {
-      title: "포트폴리오",
+      title: "포트폴리오 (개인 프로젝트)",
       duration: { fromDate: "2022-01", toDate: "2022-01" },
       description: "반응형 웹 포트폴리오",
+      git: "https://github.com/kimyoosang/ResponsivePortfolio",
+      link: "https://kimyoosangportfolio.herokuapp.com/",
       subHeading: "개인 프로젝트",
     },
     {
-      title: "땅땅마켓",
+      title: "땅땅마켓 (4인 프로젝트)",
       duration: { fromDate: "2021-04", toDate: "2021-05" },
       description: "위치기반 실시간 경매형 중고거래 서비스",
+      git: "https://github.com/codestates/lilakchal-client",
+      wiki: "https://github.com/codestates/lilakchal-server/wiki",
+      link: "https://ttangttang.shop",
       subHeading: "4인 프로젝트",
     },
     {
-      title: "노래번호부",
+      title: "노래번호부 (4인 프로젝트)",
       duration: { fromDate: "2021-03", toDate: "2021-03" },
+      git: "https://github.com/codestates/SNB-client",
+      wiki: "https://github.com/codestates/SNB-server/wiki",
       description: "노래방 애창곡을 리스트에 저장할 수 있는 서비스",
       subHeading: "4인 프로젝트",
     },
@@ -173,14 +180,39 @@ function Resume(props) {
     </div>,
     <div className="resume-screen-container" key="projects">
       {projectDetails.map((projectDetails, index) => (
-        <ResumeHeading
-          key={index}
-          heading={projectDetails.title}
-          subHeading={projectDetails.subHeading}
-          description={projectDetails.description}
-          fromDate={projectDetails.duration.fromDate}
-          toDate={projectDetails.duration.toDate}
-        />
+        <>
+          <ResumeHeading
+            key={index}
+            heading={projectDetails.title}
+            // subHeading={projectDetails.subHeading}
+            description={projectDetails.description}
+            fromDate={projectDetails.duration.fromDate}
+            toDate={projectDetails.duration.toDate}
+          />
+          <div className="link-area">
+            {projectDetails.link ? (
+              <a href={projectDetails.link} target={"_blank"} rel="noreferrer">
+                <i class="fa fa-globe"></i>
+              </a>
+            ) : (
+              <></>
+            )}
+            {projectDetails.git ? (
+              <a href={projectDetails.git} target={"_blank"} rel="noreferrer">
+                <i className="fa fa-github" style={{ color: "black" }}></i>
+              </a>
+            ) : (
+              <></>
+            )}
+            {projectDetails.wiki ? (
+              <a href={projectDetails.wiki} target={"_blank"} rel="noreferrer">
+                <i class="fa fa-book" style={{ color: "green" }}></i>
+              </a>
+            ) : (
+              <></>
+            )}
+          </div>
+        </>
       ))}
     </div>,
     <div className="resume-screen-container" key="interests">

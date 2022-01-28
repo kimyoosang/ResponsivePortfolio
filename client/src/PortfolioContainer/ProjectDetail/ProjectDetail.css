@@ -1,0 +1,40 @@
+.project-detail-section {
+  padding: 120px 0 100px;
+  /* width: 100%;
+  height: 100%; */
+  background-image: url("../../img//Project/bg-1.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  z-index: -1;
+}
+.project-detail-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.85;
+  background-color: #1f2235;
+}
+.hidden-div {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 300px;
+  /* justify-content: center; */
+  align-items: center;
+}
+.hidden-div .display-div {
+  display: block;
+  color: black;
+  width: 800px;
+  height: 500px;
+  background-color: white;
+}
+.hidden-div .none-div {
+  display: none;
+}
