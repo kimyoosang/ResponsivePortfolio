@@ -19,4 +19,4 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const port = process.env.PORT || 4000;
-app.listen(port, console.log("server listening..."));
+app.listen(port, console.log(`server listing to port 4000 only`));
