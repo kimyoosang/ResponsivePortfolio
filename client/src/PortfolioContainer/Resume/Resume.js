@@ -65,7 +65,7 @@ function Resume(props) {
   const projectDetails = [
     {
       title: "포트폴리오 (개인 프로젝트)",
-      duration: { fromDate: "2022-01", toDate: "2022-01" },
+      duration: { fromDate: "2022.01", toDate: "2022.01" },
       description: "반응형 웹 포트폴리오",
       git: "https://github.com/kimyoosang/ResponsivePortfolio",
       link: "https://kimyoosangportfolio.herokuapp.com/",
@@ -73,7 +73,7 @@ function Resume(props) {
     },
     {
       title: "땅땅마켓 (4인 프로젝트)",
-      duration: { fromDate: "2021-04", toDate: "2021-05" },
+      duration: { fromDate: "2021.04", toDate: "2021.05" },
       description: "위치기반 실시간 경매형 중고거래 서비스",
       git: "https://github.com/codestates/lilakchal-client",
       wiki: "https://github.com/codestates/lilakchal-server/wiki",
@@ -82,7 +82,7 @@ function Resume(props) {
     },
     {
       title: "노래번호부 (4인 프로젝트)",
-      duration: { fromDate: "2021-03", toDate: "2021-03" },
+      duration: { fromDate: "2021.03", toDate: "2021.03" },
       git: "https://github.com/codestates/SNB-client",
       wiki: "https://github.com/codestates/SNB-server/wiki",
       description: "노래방 애창곡을 리스트에 저장할 수 있는 서비스",
@@ -95,22 +95,22 @@ function Resume(props) {
       <ResumeHeading
         heading={"코드스테이츠 부트캠프"}
         subHeading={"Full Stack Software Engineering"}
-        fromDate={"2020-09"}
-        foDate={"2021-05"}
+        fromDate={"2020.09"}
+        foDate={"2021.05"}
       />
       <ResumeHeading
         heading={"동양미래대학교"}
         subHeading={"로봇자동화공학과"}
-        fromDate={"2015-03"}
-        foDate={"2021-02"}
+        fromDate={"2015.03"}
+        foDate={"2021.02"}
       />
     </div>,
     <div className="resume-screen-container" key="work-experience">
       <ResumeHeading
         heading={"위멤버"}
         subHeading={"프론트엔드 개발자"}
-        fromDate={"2021-09"}
-        foDate={"2021-12"}
+        fromDate={"2021.09"}
+        foDate={"2021.12"}
       />
       <div className="experience-description">
         <span className="experience-description-text">
