@@ -37,8 +37,7 @@ function ContactMe(props) {
   console.log(name);
 
   const submitForm = async (e) => {
-    e.preventdefault();
-
+    e.preventDefault();
     try {
       let data = {
         name,
@@ -46,12 +45,12 @@ function ContactMe(props) {
         message,
       };
       setBool(true);
-      const res = await axios.post("/contact", data);
+      const res = await axios.post(`/contact`, data);
       if (name.length === 0 || email.length === 0 || message.length === 0) {
         setBanner(res.data.msg);
         toast.error(res.data.msg);
         setBool(false);
-      } else if (res.statue === 200) {
+      } else if (res.status === 200) {
         setBanner(res.data.msg);
         toast.success(res.data.msg);
         setBool(false);
@@ -64,6 +63,7 @@ function ContactMe(props) {
       console.log(error);
     }
   };
+
   return (
     <div className="main-container fade-in" id={props.id || ""}>
       <ScreenHeading subHeading={"Lets Keep In Touch"} title={"Contact Me"} />
@@ -83,7 +83,7 @@ function ContactMe(props) {
             <i className="fa fa-instagram"></i>
           </a>
           <a href="#">
-            <i className="fa fa-youtuve-square"></i>
+            <i className="fa fa-youtube-square"></i>
           </a>
           <a href="#">
             <i className="fa fa-twitter"></i>
@@ -96,35 +96,26 @@ function ContactMe(props) {
           </div>
           <form onSubmit={submitForm}>
             <p>{banner}</p>
-
             <label htmlFor="name">Name</label>
-            <input type="text" onChange={(e) => handleName(e)} value={name} />
+            <input type="text" onChange={handleName} value={name} />
 
             <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              onChange={(e) => handleEmail(e)}
-              value={email}
-            />
+            <input type="email" onChange={handleEmail} value={email} />
 
             <label htmlFor="message">Message</label>
-            <input
-              type="text"
-              onChange={(e) => handleMessage(e)}
-              value={message}
-            />
+            <textarea type="text" onChange={handleMessage} value={message} />
+
             <div className="send-btn">
               <button type="submit">
-                Send
-                <i className="fa fa-paper-plane">
-                  {bool ? (
-                    <b className="load">
-                      <img src={load1} alt="image not responding" />
-                    </b>
-                  ) : (
-                    ""
-                  )}
-                </i>
+                send
+                <i className="fa fa-paper-plane" />
+                {bool ? (
+                  <b className="load">
+                    <img src={load1} alt="iamge not responding" />
+                  </b>
+                ) : (
+                  ""
+                )}
               </button>
             </div>
           </form>
