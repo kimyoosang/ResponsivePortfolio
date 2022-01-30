@@ -20,18 +20,6 @@ function Project(props) {
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
-  // let idx = 0;
-
-  // const handleSelect = () => {
-  //   // console.log(e.page.index);
-  //   idx++;
-  //   console.log(idx);
-  //   if (idx > 3) {
-  //     idx = 0;
-  //   }
-  //   return;
-  // };
-
   const options = {
     loop: true,
     margin: 0,

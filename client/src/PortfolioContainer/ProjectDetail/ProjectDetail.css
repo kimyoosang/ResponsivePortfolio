@@ -22,7 +22,7 @@
   filter: brightness(80%);
 }
 .card-container {
-  width: 60%;
+  width: 800px;
   height: 500px;
   margin: auto;
   position: relative;
@@ -70,4 +70,40 @@
 }
 .card-container:hover .back {
   transform: rotateY(0deg); /*y축을 기준으로 0도 까지회전*/
+}
+@media screen and (max-width: 900px) {
+  .card-container {
+    width: 100%;
+    height: 500px;
+  }
+  .card {
+  }
+  .front {
+  }
+  .front img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+}
+@media screen and (max-width: 810px) {
+  .card-container {
+    width: 500px;
+    height: 300px;
+  }
+  .card {
+  }
+  .front {
+  }
+  .front img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+}
+@media screen and (max-width: 550px) {
+  .card-container {
+    width: 100%;
+    height: 250px;
+  }
 }
