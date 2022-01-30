@@ -21,7 +21,7 @@ function ProjectDetail(props) {
       title: "반응형 웹 포트폴리오",
       img: portfolio,
       skill: "React | Javascript | Node JS | Axios |CSS | Heroku ",
-      git: "https://github.com/kimyoosang/ResponsivePortfolio",
+      git: "https://github.com/kimyoosang/ResponsivePortfolio/",
       link: "https://kimyoosangportfolio.herokuapp.com/",
       subtitle: "개인 프로젝트",
       description: [

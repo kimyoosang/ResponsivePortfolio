@@ -67,7 +67,7 @@ function Resume(props) {
       title: "포트폴리오 (개인 프로젝트)",
       duration: { fromDate: "2022.01", toDate: "2022.01" },
       description: "반응형 웹 포트폴리오",
-      git: "https://github.com/kimyoosang/ResponsivePortfolio",
+      git: "https://github.com/kimyoosang/ResponsivePortfolio/",
       link: "https://kimyoosangportfolio.herokuapp.com/",
       subHeading: "개인 프로젝트",
     },
