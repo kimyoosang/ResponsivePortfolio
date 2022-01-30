@@ -121,6 +121,7 @@ function Resume(props) {
         <span className="resume-description-text">
           - Oauth를 활용한 Kakao, Facebook, Google 소셜로그인 구현
         </span>
+        <br />
         <span className="resume-description-text">
           - Axios, JWT를 사용해 자사 회원가입,로그인 기능 구현
         </span>
@@ -216,9 +217,12 @@ function Resume(props) {
       ))}
     </div>,
     <div className="resume-screen-container" key="interests">
-      <ResumeHeading heading="Reading" description="책 읽는 것을 좋아합니다" />
       <ResumeHeading heading="Music" description="음악 듣는 것을 좋아합니다" />
-      <ResumeHeading heading="Animal" description="동물을 좋아합니다" />
+      <ResumeHeading heading="Coffe" description="커피를 사랑합니다" />
+      <ResumeHeading
+        heading="Reading"
+        description="최근엔 독서에 관심이 많습니다"
+      />
     </div>,
   ];
 
