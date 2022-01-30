@@ -21,6 +21,8 @@ function ProjectDetail(props) {
       title: "반응형 웹 포트폴리오",
       img: portfolio,
       skill: "React | Javascript | Node JS | Axios |CSS | Heroku ",
+      git: "https://github.com/kimyoosang/ResponsivePortfolio",
+      link: "https://kimyoosangportfolio.herokuapp.com/",
       subtitle: "개인 프로젝트",
       description: [
         "리액트와 자바스크립트를 활용하여 만든 반응형 웹 포트폴리오 입니다",
@@ -34,6 +36,9 @@ function ProjectDetail(props) {
       subtitle: "4인 프로젝트",
       skill:
         "React | Javascript | Typescript | Redux | React Hooks | Styled-component | Socket.io | react-responsive | AWS",
+      git: "https://github.com/codestates/lilakchal-client",
+      wiki: "https://github.com/codestates/lilakchal-server/wiki",
+      link: "https://ttangttang.shop",
       description: [
         "위치기반 실시간 경매형 중고거래 서비스입니다",
         "구글API를 이용하여 위치기반 상품들을 리스팅합니다",
@@ -48,6 +53,8 @@ function ProjectDetail(props) {
       img: songnumberbook,
       subtitle: "4인 프로젝트",
       skill: "React | Javascript | React Hooks | CSS | Axios",
+      git: "https://github.com/codestates/SNB-client",
+      wiki: "https://github.com/codestates/SNB-server/wiki",
       description: [
         "TJ노래방 노래목록 중에서 애창곡을 리스트로 저장하는 서비스",
         "검색 및 페이징 기능 구현",
@@ -67,7 +74,35 @@ function ProjectDetail(props) {
             </div>
             <div class="back card">
               <div className="title">{project.title}</div>
-              <div className="sub-title">{project.subtitle}</div>
+              <div className="sub-title">
+                {project.subtitle}
+                <div className="link-area">
+                  {project.link ? (
+                    <a href={project.link} target={"_blank"} rel="noreferrer">
+                      <i class="fa fa-globe"></i>
+                    </a>
+                  ) : (
+                    <></>
+                  )}
+                  {project.git ? (
+                    <a href={project.git} target={"_blank"} rel="noreferrer">
+                      <i
+                        className="fa fa-github"
+                        style={{ color: "black" }}
+                      ></i>
+                    </a>
+                  ) : (
+                    <></>
+                  )}
+                  {project.wiki ? (
+                    <a href={project.wiki} target={"_blank"} rel="noreferrer">
+                      <i class="fa fa-book" style={{ color: "green" }}></i>
+                    </a>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              </div>
               <div className="skill">{project.skill}</div>
               <div className="description">
                 {project.description.map((el, idx) => (

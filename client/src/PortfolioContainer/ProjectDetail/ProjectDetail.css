@@ -1,5 +1,5 @@
 .project-detail-section {
-  background-image: url("../../img//Project/star.jpg");
+  background-image: url("../../img//Project/city.jpg");
   background-position: center;
   background-attachment: fixed;
   position: relative;
@@ -61,11 +61,12 @@
   border-radius: 20px;
 }
 .back {
-  background: aqua;
+  background: #e9e9e9;
+  opacity: 0.9;
   transform: rotateY(-180deg);
   border-radius: 20px;
   padding: 50px;
-  gap: 20px;
+  gap: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,8 +76,20 @@
   font-weight: 600;
   color: blueviolet;
 }
-.subtitle {
-  font-size: 20px;
+.sub-title {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.link-area {
+  /* background-color: white; */
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.link-area i {
+  font-size: 30px;
 }
 .skill {
   font-weight: 600;
@@ -124,8 +137,11 @@
     font-weight: 600;
     color: blueviolet;
   }
-  .subtitle {
-    font-size: 16px;
+  .sub-title {
+    font-size: 12px;
+    display: flex;
+
+    align-items: center;
   }
   .skill {
     font-weight: 600;
