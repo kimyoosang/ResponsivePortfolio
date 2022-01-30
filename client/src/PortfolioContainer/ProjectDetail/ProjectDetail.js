@@ -62,13 +62,10 @@ function ProjectDetail(props) {
       <section className="project-detail-section fade-in" id={props.id || ""}>
         {projectList.map((project, idx) => (
           <div class="card-container">
-            {" "}
             <div class="front card">
-              {" "}
               <img src={project.img} alt="" />
-            </div>{" "}
+            </div>
             <div class="back card">
-              {" "}
               <div className="title">{project.title}</div>
               <div className="sub-title">{project.subtitle}</div>
               <div className="skill">{project.skill}</div>
@@ -80,7 +77,7 @@ function ProjectDetail(props) {
                   </div>
                 ))}
               </div>
-            </div>{" "}
+            </div>
           </div>
         ))}
       </section>
