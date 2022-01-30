@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
+import ttangttang from "../../../src/img/Project/ttangttang.png";
+import songnumberbook from "../../../src/img/Project/songnumberbook.gif";
+import portfolio from "../../../src/img/Project/portfolio.png";
+import ttangMid from "../../../src/img/Project/ttangttangMid.png";
 import "./ProjectDetail.css";
 
 function ProjectDetail(props) {
@@ -12,56 +16,73 @@ function ProjectDetail(props) {
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
-  const [position, setPosition] = useState(0);
-  const onScroll = () => {
-    console.log(window.scrollY);
-    setPosition(window.scrollY);
-  };
-  // useEffect(() => {
-  //   document.addEventListener("scroll", getCurrentScrollPercentage);
-  //   return () => {
-  //     window.removeEventListener("scroll", onScroll);
-  //   };
-  // });
-
-  // function getCurrentScrollPercentage() {
-  //   // return (
-  //   //   ((window.scrollY + window.innerHeight) / document.body.clientHeight) * 100
-  //   // );
-  //   console.log(
-  //     ((window.scrollY + window.innerHeight) / document.body.clientHeight) * 100
-  //   );
-  // }
-  // useEffect(() => {
-  //   console.log(scrollPercentage);
-  // });
-  // let Element = document.getElementsByClassName("test");
-  // // console.log(element[0].clientHeight);
-  // var scrollPercentage =
-  //   Element[0].scrollTop === 0
-  //     ? 0
-  //     : (100 * (Element[0].scrollTop + Element[0].clientHeight)) /
-  //       Element[0].scrollHeight;
-  useEffect(() => {
-    document.addEventListener("scroll", () => {
-      let Topel = document.getElementsByClassName("portfolio-container")[0];
-      console.log("전체 스크롤 위치", Topel.clientHeight);
-      console.log("현재 스크롤 위치", window.pageYOffset);
-      console.log("비율", (window.pageYOffset / Topel.clientHeight) * 100);
-      //비율을 전체가 아니라 현재 컴포넌트와 맨위까지의 거리를 재고,
-    });
-  });
+  const projectList = [
+    {
+      title: "반응형 웹 포트폴리오",
+      img: portfolio,
+      skill: "React | Javascript | Node JS | Axios |CSS | Heroku ",
+      subtitle: "개인 프로젝트",
+      description: [
+        "리액트와 자바스크립트를 활용하여 만든 반응형 웹 포트폴리오 입니다",
+        "랜덩링, 스크롤 효과, 애니메이션을 위한 효과를 각각 모듈화 하였습니다",
+        "Node js로 간단하게 백엔드를 구축하여 gmail로 메일을 보내는 기능을 추가했습니다",
+      ],
+    },
+    {
+      title: "땅땅마켓",
+      img: ttangMid,
+      subtitle: "4인 프로젝트",
+      skill:
+        "React | Javascript | Typescript | Redux | React Hooks | Styled-component | Socket.io | react-responsive | AWS",
+      description: [
+        "위치기반 실시간 경매형 중고거래 서비스입니다",
+        "구글API를 이용하여 위치기반 상품들을 리스팅합니다",
+        "Soket.io를 이용하여 구매자와 판매자가 채팅을 할 수 있습니다",
+        "Oauth를 이용한 카카오 소셜 로그인",
+        "스크롤 값을 이용한 랜딩페이지 애니메이션 구현",
+        "검색 및 검색 결과 페이지 무한 스크롤 구현",
+      ],
+    },
+    {
+      title: "노래번호부",
+      img: songnumberbook,
+      subtitle: "4인 프로젝트",
+      skill: "React | Javascript | React Hooks | CSS | Axios",
+      description: [
+        "TJ노래방 노래목록 중에서 애창곡을 리스트로 저장하는 서비스",
+        "검색 및 페이징 기능 구현",
+        "헤더,마이페이지,검색페이지 구현",
+      ],
+    },
+  ];
 
   return (
     <div className="test">
       <ScreenHeading title={"Project Detail"} sebGeading={"My Projects"} />
       <section className="project-detail-section fade-in" id={props.id || ""}>
-        <div className="hidden-div">
-          <div className="display-div">여기는 보여줍시다</div>
-          <div className="display-div">여기는 보여줍시다</div>
-          <div className="display-div">여기는 보여줍시다</div>
-          <div className="none-div"></div>
-        </div>
+        {projectList.map((project, idx) => (
+          <div class="card-container">
+            {" "}
+            <div class="front card">
+              {" "}
+              <img src={project.img} alt="" />
+            </div>{" "}
+            <div class="back card">
+              {" "}
+              <div className="title">{project.title}</div>
+              <div className="sub-title">{project.subtitle}</div>
+              <div className="skill">{project.skill}</div>
+              <div className="description">
+                {project.description.map((el, idx) => (
+                  <div>
+                    - {el}
+                    <br></br>
+                  </div>
+                ))}
+              </div>
+            </div>{" "}
+          </div>
+        ))}
       </section>
     </div>
   );
