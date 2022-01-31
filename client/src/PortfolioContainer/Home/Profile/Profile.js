@@ -8,7 +8,7 @@ function Profile() {
     <div className="profile-container">
       <div className="profile-parent">
         <div className="profile-details">
-          <div className="colz">
+          {/* <div className="colz">
             <div className="colz-icon">
               <a href="https://www.naver.com">
                 <i className="fa fa-facebook-square"></i>
@@ -26,7 +26,7 @@ function Profile() {
                 <i className="fa fa-twitter"></i>
               </a>
             </div>
-          </div>
+          </div> */}
           <div className="profile-details-name">
             <span className="primary-text">
               {" "}
