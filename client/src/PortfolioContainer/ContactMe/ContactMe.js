@@ -73,7 +73,7 @@ function ContactMe(props) {
             {" "}
             <Typical logo={Infinity} steps={["Get In Touch 📧", 1000]} />
           </h2>
-          <a href="#">
+          {/* <a href="#">
             <i className="fa fa-facebook-square"></i>
           </a>
           <a href="#">
@@ -87,7 +87,7 @@ function ContactMe(props) {
           </a>
           <a href="#">
             <i className="fa fa-twitter"></i>
-          </a>
+          </a> */}
         </div>
         <div className="back-form">
           <div className="img-back">
